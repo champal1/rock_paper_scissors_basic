@@ -1,0 +1,32 @@
+import random
+def main ():
+    list_pick = ['rock', 'paper', 'scissors']
+    while True:
+        random_choice = random.choice(list_pick)
+        user_ask = input("Let's play, pick one, rock, paper, or scissors: ").lower()
+        if user_ask not in list_pick:
+            print("Not an option try again")
+            continue
+
+        print(f"Computer choose: {random_choice}")
+        if user_ask == random_choice:
+            print("Tie")
+        elif user_ask == "rock" and random_choice == "scissors":
+            print("you win!")
+        elif user_ask == "paper" and random_choice == "rock":
+            print("you win!")
+        elif user_ask == "scissors" and random_choice == "paper":
+            print("You win!")
+        else:
+            print("You lose")
+
+        play_more = input("Want to play again?: ").lower()
+        if play_more != "yes":
+            print("Ok goodbye")
+            break
+
+
+
+
+if __name__ == "__main__":
+    main()
